@@ -1,0 +1,58 @@
+@use 'variables.scss' as *;
+
+.header {
+  background-color: inherit;
+  padding: 0 50px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  margin-left: 20px;
+}
+
+.nav__item:first-of-type {
+  margin-left: 0;
+}
+
+.nav__link {
+  display: inline-block;
+  line-height: 60px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: $main-txt-color;
+}
+
+.nav__link:hover {
+  color: $interaction-color;
+}
+
+.is-active {
+  color: $interaction-color;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $interaction-color;
+  height: 4px;
+  border-radius: 8px;
+}
