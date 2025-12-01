@@ -3,7 +3,6 @@
 .stars {
   display: flex;
   gap: $star-gap;
-  justify-content: left;
 
   &__star {
     background-image: url('../images/star.svg');

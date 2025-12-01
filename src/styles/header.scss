@@ -1,58 +1,68 @@
 @use 'variables.scss' as *;
 
 .header {
-  background-color: inherit;
+  background-color: white;
   padding: 0 50px;
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+
+  box-shadow: 0 2px 4px 0 #0000000d;
 }
 
 .logo {
+  display: block;
   height: 40px;
+  width: 40px;
 }
 
-.nav__list {
-  display: flex;
-  list-style: none;
-}
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-.nav__item {
-  margin-left: 20px;
-}
+  &__item {
+    margin-left: 20px;
 
-.nav__item:first-of-type {
-  margin-left: 0;
-}
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
 
-.nav__link {
-  display: inline-block;
-  line-height: 60px;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  color: $main-txt-color;
-}
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-txt-color;
+    transition: color $card-transition-time;
 
-.nav__link:hover {
-  color: $interaction-color;
+    &:hover {
+      color: $interaction-color;
+    }
+  }
 }
 
 .is-active {
   color: $interaction-color;
   position: relative;
-}
 
-.is-active::after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $interaction-color;
-  height: 4px;
-  border-radius: 8px;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $interaction-color;
+    height: 4px;
+    border-radius: 8px;
+  }
 }
